@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { useNavigate } from "react-router-dom";
 export default function Navbar(props) {
   const txtcolor = {
     color: props.mode == "dark" ? "white" : "black",
   };
+  const navigate = useNavigate();
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark"
@@ -33,14 +34,18 @@ export default function Navbar(props) {
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="/"
                 style={txtcolor}
+                onClick={() => navigate("/")}
               >
                 {props.subTitle}
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/" style={txtcolor}>
+              <a
+                className="nav-link"
+                style={txtcolor}
+                onClick={() => navigate("/about")}
+              >
                 {props.About}
               </a>
             </li>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
-export default function About() {
+export default function About(props) {
   const [bg, setBg] = useState("white");
   const [c, setC] = useState("black");
   const [border, setBorder] = useState("black");
@@ -8,37 +8,23 @@ export default function About() {
     backgroundColor: bg,
     color: c,
   };
+  useEffect(() => {
+    if (props.mode == "dark") {
+      setBg("rgb(62 90 116)");
+      document.body.style.backgroundColor = "rgb(62 90 116)";
+      setC("white");
+      setBorder("white");
+    } else {
+      document.body.style.backgroundColor = "white";
+      setBg("white");
+      setC("black");
+      setBorder("black");
+    }
+  }, [props.mode, props.toggleMode]);
   return (
     <div className="container" style={myStyle}>
       <h3 className="my-3">About Us</h3>
-      <div className="form-check form-switch">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckDefault"
-          onChange={() => {
-            if (bg == "black") {
-              setBg("white");
-              setC("black");
-              setBorder("black");
-            } else {
-              setBg("black");
-              setC("white");
-              setBorder("white");
-            }
-          }}
-        />
-        {bg == "white" ? (
-          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-            Switch to dark
-          </label>
-        ) : (
-          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-            Switch to light
-          </label>
-        )}
-      </div>
+
       <div
         className="accordion"
         id="accordionExample"

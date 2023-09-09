@@ -3,7 +3,7 @@ import "./App.css";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState("light");
   const toggleMode = () => {
@@ -17,23 +17,37 @@ function App() {
   };
   return (
     <>
-      <Navbar
-        mainTitle="TextUtils"
-        subTitle="Home"
-        About="About"
-        toggleMode={toggleMode}
-        mode={mode}
-      />
-      <div className="container my-3">
-        <TextForm
-          heading="Enter text to analyse below"
-          mode={mode}
+      <BrowserRouter>
+        <Navbar
+          mainTitle="TextUtils"
+          subTitle="Home"
+          About="About"
           toggleMode={toggleMode}
+          mode={mode}
         />
-      </div>
-      {/* <div className="container">
-        <About />
-      </div> */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="container my-3">
+                <TextForm
+                  heading="Enter text to analyse below"
+                  mode={mode}
+                  toggleMode={toggleMode}
+                />
+              </div>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <div className="container">
+                <About mode={mode} toggleMode={toggleMode} />
+              </div>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

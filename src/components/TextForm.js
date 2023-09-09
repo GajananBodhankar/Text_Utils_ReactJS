@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "../App.css";
 import { CustomText, upper, test } from "./Changes";
-import ReactjsAlert from "reactjs-alert";
 import Alert from "./Alert";
 export default function TextForm(props) {
   const [status, setStatus] = useState(false);
-
   useEffect(() => {
     props.mode == "light"
       ? (document.body.style.backgroundColor = "white")
