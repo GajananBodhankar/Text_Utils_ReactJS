@@ -9,8 +9,10 @@ function App() {
   const toggleMode = () => {
     if (mode == "light") {
       setMode("dark");
+      document.title = "TextUtils-dark mode";
     } else {
       setMode("light");
+      document.title = "TextUtils-light mode";
     }
   };
   return (

@@ -3,7 +3,6 @@ import "../App.css";
 import { CustomText, upper, test } from "./Changes";
 import ReactjsAlert from "reactjs-alert";
 import Alert from "./Alert";
-// import Alert from "./Alert";
 export default function TextForm(props) {
   const [status, setStatus] = useState(false);
 
@@ -21,7 +20,12 @@ export default function TextForm(props) {
     setText(e.target.value);
   }
   let copy = useCallback(() => {
-    navigator.clipboard.writeText(text);
+    const txt = document.createElement("textarea");
+    txt.value = text;
+    document.body.appendChild(txt);
+    txt.select();
+    document.execCommand("copy");
+    document.body.removeChild(txt);
     setStatus(true);
   }, [text]);
   let upper = useCallback(() => {
