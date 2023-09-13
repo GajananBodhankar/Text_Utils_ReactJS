@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "../App.css";
-import { CustomText, upper, test } from "./Changes";
+import { CustomText} from "./Changes";
 import Alert from "./Alert";
 export default function TextForm(props) {
   const [status, setStatus] = useState(false);
   useEffect(() => {
-    props.mode == "light"
+    props.mode === "light"
       ? (document.body.style.backgroundColor = "white")
       : (document.body.style.backgroundColor = "rgb(62 90 116)");
-  }, [props.toggleMode]);
+  }, [props.mode,props.toggleMode]);
   const myStyle = {
-    color: props.mode == "light" ? "black" : "white",
+    color: props.mode === "light" ? "black" : "white",
   };
 
   const { text, setText } = CustomText();

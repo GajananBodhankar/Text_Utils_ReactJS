@@ -4,10 +4,11 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
 function App() {
   const [mode, setMode] = useState("light");
   const toggleMode = () => {
-    if (mode == "light") {
+    if (mode === "light") {
       setMode("dark");
       document.title = "TextUtils-dark mode";
     } else {

@@ -9,7 +9,7 @@ export default function About(props) {
     color: c,
   };
   useEffect(() => {
-    if (props.mode == "dark") {
+    if (props.mode === "dark") {
       setBg("rgb(62 90 116)");
       document.body.style.backgroundColor = "rgb(62 90 116)";
       setC("white");
@@ -41,7 +41,7 @@ export default function About(props) {
               aria-controls="collapseOne"
               style={myStyle}
             >
-              Accordion Item #1
+              About Website
             </button>
           </h2>
           <div
@@ -51,14 +51,12 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>This is the about TextUtils website.</strong> Welcome to
+              TextuLis, your go-to destination for a wide array of text-related
+              tools and utilities that empower you to harness the full potential
+              of written communication. Created with a passion for enhancing
+              your text-related tasks, TextuLis is designed to be your one-stop
+              digital toolkit for all things textual.
             </div>
           </div>
         </div>
@@ -73,7 +71,7 @@ export default function About(props) {
               aria-controls="collapseTwo"
               style={myStyle}
             >
-              Accordion Item #2
+              About me
             </button>
           </h2>
           <div
@@ -83,47 +81,17 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item" style={myStyle}>
-          <h2 className="accordion-header" id="headingThree">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-              style={myStyle}
-              color={c}
-            >
-              Accordion Item #3
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            className="accordion-collapse collapse"
-            aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>This is the Owner of website.</strong>
+              Hi there!! This is Gajanan Bodhankar, a passionate front-end
+              developer with hands on experience in ReactJS and React-native.
+              Please feel free to reach me out if needed any assistance for the
+              same <a href="mailto:bodhankargajanan99@gmail.com">E-mail</a>
+              {"  "}
+              <a href="https://github.com/GajananBodhankar" target="_blank">
+                Github
+              </a>
+              {"  "}
+              <a href="https://twitter.com/GajananBodhank4">Twitter</a>
             </div>
           </div>
         </div>

@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 export default function Navbar(props) {
   const txtcolor = {
-    color: props.mode == "dark" ? "white" : "black",
+    color: props.mode === "dark" ? "white" : "black",
   };
   const navigate = useNavigate();
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark"
       style={{
-        backgroundColor: props.mode == "light" ? "#e2e2e2" : "black",
+        backgroundColor: props.mode === "light" ? "#e2e2e2" : "black",
       }}
     >
       <div className="container-fluid">
